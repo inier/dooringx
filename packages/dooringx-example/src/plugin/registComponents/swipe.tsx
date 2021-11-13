@@ -100,33 +100,19 @@ const InputTemp = (pr: InputProps) => {
 				overflow: 'hidden',
 			}}
 		>
-			<Input
-				value={value}
-				type={props.type}
-				placeholder={props.placeholder}
-				style={{ height: 'calc( 100% - 20px )' }}
-				onChange={(e) => {
-					setValue(e.target.value);
-				}}
-			></Input>
-
-			<div style={{ height: '20px', color: 'red', fontSize: '12px' }}>{err}</div>
+			<img src={props.upload} style={{ width: '100%' }} alt="" />
 		</div>
 	);
 };
 
-const InputCo = new ComponentItemFactory(
-	'input',
-	'输入组件',
+const Swipe = new ComponentItemFactory(
+	'swipe',
+	'轮播组件',
 	{
 		style: [
-			createPannelOptions<FormMap, 'input'>('input', {
-				receive: 'placeholder', //用于发送回的props，必传 ,跨组件传递需要指定额外字
-				label: '文本',
-			}),
-			createPannelOptions<FormMap, 'input'>('input', {
-				receive: 'warning', //用于发送回的props，必传 ,跨组件传递需要指定额外字
-				label: '验证消息',
+			createPannelOptions<FormMap, 'upload'>('upload', {
+				receive: 'upload', //用于发送回的props，必传 ,跨组件传递需要指定额外字
+				label: '文件上传',
 			}),
 		],
 		fn: [
@@ -152,7 +138,7 @@ const InputCo = new ComponentItemFactory(
 			op2: false,
 		},
 		width: 200,
-		height: 55,
+		height: 200,
 	},
 	(data, context, store, config) => {
 		return <InputTemp data={data} context={context} store={store} config={config}></InputTemp>;
@@ -160,4 +146,4 @@ const InputCo = new ComponentItemFactory(
 	true
 );
 
-export default InputCo;
+export default Swipe;

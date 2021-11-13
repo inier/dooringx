@@ -13,6 +13,7 @@ import commandModules from './commanderModules';
 import { functionMap } from './functionMap';
 import { Formmodules } from './formComponentModules';
 import InputCo from './registComponents/inputCo';
+import Swipe from './registComponents/swipe';
 
 const LeftRegistMap: LeftRegistComponentMapItem[] = [
 	{
@@ -27,7 +28,15 @@ const LeftRegistMap: LeftRegistComponentMapItem[] = [
 		type: 'basic',
 		component: 'input',
 		img: 'icon-anniu',
+		imgCustom: <PlayCircleOutlined />,
 		displayName: '输入框',
+	},
+	{
+		type: 'basic',
+		component: 'swipe',
+		img: 'icon-anniu',
+		imgCustom: <PlayCircleOutlined />,
+		displayName: '轮播图',
 	},
 ];
 
@@ -54,12 +63,13 @@ export const defaultConfig: Partial<InitConfig> = {
 	],
 	initComponentCache: {
 		input: { component: InputCo },
+		swipe: { component: Swipe },
 	},
 	rightRenderListCategory: [
 		{
 			type: 'style',
 			icon: (
-				<div className='right-tab-item' style={{ width: 50, textAlign: 'center' }}>
+				<div className="right-tab-item" style={{ width: 50, textAlign: 'center' }}>
 					外观
 				</div>
 			),
@@ -67,7 +77,7 @@ export const defaultConfig: Partial<InitConfig> = {
 		{
 			type: 'animate',
 			icon: (
-				<div className='right-tab-item' style={{ width: 50, textAlign: 'center' }}>
+				<div className="right-tab-item" style={{ width: 50, textAlign: 'center' }}>
 					动画
 				</div>
 			),
@@ -75,7 +85,7 @@ export const defaultConfig: Partial<InitConfig> = {
 		{
 			type: 'fn',
 			icon: (
-				<div className='right-tab-item' style={{ width: 50, textAlign: 'center' }}>
+				<div className="right-tab-item" style={{ width: 50, textAlign: 'center' }}>
 					函数
 				</div>
 			),
@@ -83,7 +93,7 @@ export const defaultConfig: Partial<InitConfig> = {
 		{
 			type: 'actions',
 			icon: (
-				<div className='right-tab-item' style={{ width: 50, textAlign: 'center' }}>
+				<div className="right-tab-item" style={{ width: 50, textAlign: 'center' }}>
 					事件
 				</div>
 			),

@@ -6,7 +6,7 @@ yarn-error.log
 .vercel_build_output
 build
 dist
-
+.history
 /yarn-error.log
 
 # umi
